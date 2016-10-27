@@ -32,12 +32,12 @@ var projects = [
 			projectThumbnail:"images/icon/project-2.png"
 		},
 		{
-			projectName:"易通贷",
+			projectName:"canvas",
 			projectWebsite:"https://taozi1022.github.io/%E9%99%B6%E7%87%95_%E6%98%93%E9%80%9A%E8%B4%B7/index.html",
 		    startTime:"2016.01.01",
 			endTime:"至今",
-			projectExplain:"用户观看视频的主页面，其大部分内容是通过JS加载的。为了提高性能，采用了延迟加载、延迟渲染、事件代理等优化方式。此外，还通过监听页面的window.onerror事件对异常信息进行采集，以便及时发现和排查故障。",
-			projectLabel:["html","css3","css","js"],
-			projectThumbnail:"images/icon/yi.png"
+			projectExplain:"一个较炫星空的canvas效果",
+			projectLabel:["html","css","js","canvas"],
+			projectThumbnail:"images/icon/canvas.png"
 		}
 ]
