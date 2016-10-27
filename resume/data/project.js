@@ -15,7 +15,7 @@
 var projects = [
 		{
 			projectName:"微云",
-			projectWebsite:"https://taozi1022.github.io/weiyun/index.html",
+			projectWebsite:"https://liu1315177581.github.io/weiyun/index.html",
 		    startTime:"2016.01.01",
 			endTime:"至今",
 			projectExplain:"JS整站开发之：整屏切换+动画制作神器“TweenMax库” 导航条和首屏出场动画、3D翻转实现、整屏切换，页面动画计算滚动条滚动距离， 拖动滚动条触发页面动画，完善每一屏内的图片翻转，缩小浏览器，做布局转换。",
@@ -33,7 +33,7 @@ var projects = [
 		},
 		{
 			projectName:"canvas",
-			projectWebsite:"https://taozi1022.github.io/%E9%99%B6%E7%87%95_%E6%98%93%E9%80%9A%E8%B4%B7/index.html",
+			projectWebsite:"https://liu1315177581.github.io/canvasproject/index.html",
 		    startTime:"2016.01.01",
 			endTime:"至今",
 			projectExplain:"一个较炫星空的canvas效果",

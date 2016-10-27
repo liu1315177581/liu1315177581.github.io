@@ -1,0 +1,18 @@
+.wrap{
+	width: 580px;
+}
+#header .header_nav,
+#content .new_msy,
+.con_sub{
+	display: none;
+}
+#header .header .sel_nav{
+	display: block;
+}
+.partner,
+#footer .footer p{
+	margin-top: 0;
+}
+#footer .footer .footer_logo{
+	margin-top: -20px;
+}

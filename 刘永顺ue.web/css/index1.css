@@ -1,0 +1,14 @@
+.wrap{
+	width: 880px;
+}
+#header .header_nav,
+#content .new_msy,
+.con_sub{
+	display: none;
+}
+#header .header .sel_nav{
+	display: block;
+}
+.partner{
+	margin-top: 0;
+}
