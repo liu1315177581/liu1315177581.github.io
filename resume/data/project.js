@@ -18,7 +18,7 @@ var projects = [
 			projectWebsite:"https://liu1315177581.github.io/weiyun/index.html",
 		    startTime:"2016.01.01",
 			endTime:"至今",
-			projectExplain:"JS整站开发之：整屏切换+动画制作神器“TweenMax库” 导航条和首屏出场动画、3D翻转实现、整屏切换，页面动画计算滚动条滚动距离， 拖动滚动条触发页面动画，完善每一屏内的图片翻转，缩小浏览器，做布局转换。",
+			projectExplain:"仿照微云官网功能页的整体制作， 包括HTML, CSS和所有JS交互，项目开发运用到DOM操作、BOM操作、数据处理等实现了基本的增删改移等功能，拖拽文件夹、单选、全选、框选、拖拽移动到等页面上的常用功能;",
 			projectLabel:["html","css3","css","js"],
 			projectThumbnail:"images/icon/weiyun.png"
 		},
@@ -27,7 +27,7 @@ var projects = [
 			projectWebsite:"https://liu1315177581.github.io/刘永顺ue.web/index.html",
 		    startTime:"2016.01.01",
 			endTime:"至今",
-			projectExplain:"用户观看视频的主页面，其大部分内容是通过JS加载的。为了提高性能，采用了延迟加载、延迟渲染、事件代理等优化方式。此外，还通过监听页面的window.onerror事件对异常信息进行采集，以便及时发现和排查故障。",
+			projectExplain:"仿照Jquery官网页面，还原并优化页面效果",
 			projectLabel:["html","css3","css","js"],
 			projectThumbnail:"images/icon/project-2.png"
 		},
@@ -36,7 +36,7 @@ var projects = [
 			projectWebsite:"https://liu1315177581.github.io/canvasproject/index.html",
 		    startTime:"2016.01.01",
 			endTime:"至今",
-			projectExplain:"一个较炫星空的canvas效果",
+			projectExplain:"一个较炫星空的canvas效果,通过简单的canvas画图，做出酷炫效果，体现出一种开发创新的精神。是canvas入门的一个很好的项目点。",
 			projectLabel:["html","css","js","canvas"],
 			projectThumbnail:"images/icon/canvas.png"
 		}
