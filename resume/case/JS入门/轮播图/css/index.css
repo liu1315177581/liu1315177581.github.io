@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-10-20 16:35:46
+ * @version $Id$
+ */
+
+/* reset */
+
+button{
+	border: none;
+	padding: 0;
+	background: none;
+}
+p{
+	margin: 0;
+}
+
+/* reset end*/
+body{
+	width: 1300px;
+	height: 600px;
+	overflow: hidden;
+	background-image:linear-gradient(
+						to left top,
+						#d19ee3,
+						#7f72cf
+					);
+	padding: 50px;
+}
+.content{
+	position: relative;
+	width: 679px;
+	height: 506px;
+	background: url(../img/bg.png) no-repeat;
+	border-radius: 20px;
+	margin: auto;
+}
+
+
+.btn{
+	position: absolute;
+	top: 63px;
+	left: 195px;
+	width: 260px;
+	height: 36px;
+	font:16px/36px "微软雅黑";
+	color: #fff;
+}
+.btn button{
+	width: 128px;
+	font:16px/36px "微软雅黑";
+	border:1px solid #dcdcdc;
+	float: left;
+	color:#fff;
+	border-radius: 5px;
+}
+
+
+.title{
+	font:16px/36px "微软雅黑";
+	text-align: center;
+	color: #fff; 
+	padding-top: 100px;
+}
+
+section{
+	margin-left: 51px;
+	width: 550px;
+	position: relative;
+}
+
+.num,.singleTitle{
+	font:16px/36px "微软雅黑";
+	color:#fff;
+	text-align: center;
+	background: rgba(0,0,0,.8);
+}
+.num{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+
+	background:linear-gradient(
+						to bottom, 
+						rgba(0, 0, 0, 1), 
+						rgba(0, 0, 0, 0)
+					);
+}
+.singleTitle{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+
+}
+.prev,.next{
+	display: inline-block;
+	width: 40px;
+	line-height: 50px;
+	text-align: center;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+	z-index: 2;
+	color: #fff;
+	font-size: 30px;
+	border-radius: 5px;
+	top: 120px;
+}
+
+.prev{
+	
+	left: -5px;
+}
+
+.next{
+	right: -5px;
+}
+
+
+
+
+
+
+/* js */
+
+button.active{
+	background: #fff;
+	color: #000;
+}

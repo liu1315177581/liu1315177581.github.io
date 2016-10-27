@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>判断QQ号码</title>
+	</head>
+	<script>
+		window.onload = function(){
+			var text = document.getElementById("text");
+			var btn = document.getElementById("btn");
+			
+			btn.onclick = function(){
+				if(text.value == ""){
+					alert("请输入QQ号")
+				}else if(typeof text.value !== "number" &&  isNaN(text.value) ){
+					alert("请输入数字")
+				}else if(text.value.charAt(0) == 0 ){
+					alert("0不能在前面")
+				}else if( text.value.length != String(parseInt(text.value)).length ){
+					alert("不能输入小数")
+				}else if(text.value.length < 10 && text.value.length > 5 ){
+					alert("输入的数字在5---10位以内")
+				}else{
+					alert("输入的数字不在5---10以内")
+				}
+			}
+		}
+	</script>
+	<body>
+		<span>请输入QQ号码</span>
+		<input type="text" id="text" />
+		<input type="button" value="判断" id="btn" />
+		<br />1、有没有输入<br />2、输入的是不是数字<br />3、不能有0在前面<br />4、不能是小数<br />5、输入的数字必须在5位以上、10位以内<br />
+	</body>
+</html>

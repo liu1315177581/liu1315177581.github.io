@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-10-20 11:08:11
+ * @version $Id$
+ */
+/*------------reset-------------*/
+body,p{
+	margin:0;
+}
+button{
+	border: none;
+	padding: 0;
+	background: none;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+/*------------reset end-------------*/
+
+/* 大板块 */
+#box{
+	width:290px;
+	height:490px;
+	border:1px solid #000; 
+	border-radius: 5px;
+	margin: 20px auto;
+	background: url(../img/bg.png) no-repeat;
+}
+
+/* 内容区域 */
+.content{
+	margin-top: 80px;
+	width: 270px;
+	height: 300px;
+	display: flex;
+	padding-left: 20px;
+	margin-bottom: 40px;
+}
+#list{
+	position: relative;
+	display: flex;
+	width: 250px;
+	height: 250px;
+}
+#list li{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #fff;
+	border-radius: 5px;
+	text-align: center;
+	font:20px/50px "宋体";
+	color:#5fb6fc;
+}
+
+
+
+/* 按钮 */
+button{
+	width: 120px;
+	height: 40px;
+	border:2px solid #95dbf0;
+	background: #fff;
+	margin-left: 80px;
+	color:#5fb6fc;
+	font-size: 16px;
+}

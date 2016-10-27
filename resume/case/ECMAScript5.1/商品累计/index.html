@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>商品累加</title>
+		<style>
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			p{
+				margin: 0;
+				display: inline-block;
+			}
+			#box{
+				width: 300px;
+				border: 1px solid #000;
+				padding-left: 20px;
+				font: 18px/40px "微软雅黑";
+			}
+		</style>
+	<script>
+		/*
+		 
+		 * 1.	点击加号时,商品数量++,商品价格*当前的i值
+		 * 		最底下的那个商品数量++,价格累加.
+		 * 		将每次点击的商品价格写入自定义数组中,判断最高价格.
+		 * 
+		 * 		点击减号时,商品数量--,商品价格*当前的i值
+		 * 		最底下的那个商品数量--,价格减去当前点击商品的价格.
+		 * 		将每次点击的商品价格写入自定义数组中,判断最高价格.,
+		 * 
+		 * 
+		 * 
+		 * 
+		 * */
+		
+		
+		
+		window.onload = function(){
+			var box = document.getElementById("box");
+			var every_li = box.getElementsByTagName("li");
+			//循环每一个li
+			for( var j = 0; j < every_li.length; j++ ){
+				//调用函数并传参进去
+				fn2(every_li[j]);
+			}
+			function fn2(all_li){//形参,接收实参的数
+				//从every_li下获取strong和i和span
+				var btn = all_li.getElementsByTagName("input");
+				var all_strong = all_li.getElementsByTagName("strong")[0];
+				var all_i = all_li.getElementsByTagName("i")[0];
+				var all_span = all_li.getElementsByTagName("span")[0];
+				
+				var n = 0;//局部变量,点击当前li的+-按钮时,记录数量变化
+				
+				for( var i = 0;i<btn.length;i++){
+					//点击-按钮
+					btn[0].onclick = function(){
+						//如果n<1的时候,弹框请选择商品.否则,商品数量--,价格*n;
+						if(n<1){
+							alert("请选择商品");
+						}else{
+							all_strong.innerHTML = --n;
+							all_span.innerHTML = parseFloat(all_i.innerHTML)*n;
+							//调用商品的总数量,总价格,最大的价格
+							fnn();
+						}
+					}
+					//点击加按钮
+					btn[1].onclick = function(){
+						all_strong.innerHTML = ++n;
+						all_span.innerHTML = parseFloat(all_i.innerHTML)*n;
+						//选择商品的总价格
+						fnn();
+					}
+				}
+			}
+			
+			var m = 0;//全局变量,所有商品累加的变量
+			//商品总价
+			function fnn(){
+				var all_strong = box.getElementsByTagName("strong");
+				var all_i = box.getElementsByTagName("i");
+				var all_span = box.getElementsByTagName("span");
+				
+				var p = document.getElementsByTagName("p")[0];
+				var p_strong = p.getElementsByTagName("strong")[0];
+				var p_i = p.getElementsByTagName("i")[0];
+				var p_span = p.getElementsByTagName("span")[0];
+				
+				var num = 0;//所有商品中的数量
+				var money = 0;//总价格和总钱数
+				var max = 0;//所有商品中的最高价格
+				
+				for( var i = 0;i < every_li.length;i++){
+					num += parseFloat(all_strong[i].innerHTML); 
+					money += parseFloat(all_span[i].innerHTML);
+				}
+				p_i.innerHTML = money;//商品总价格
+				p_strong.innerHTML = num;//商品总数
+				//判断最高价格
+				for( var j = 0;j < all_i.length;j++){
+					//进行判断
+					if(all_strong[j].innerHTML !=0){
+						//当max小于all_i的数时,将all_i的值赋给max
+						if(max < parseFloat(all_i[j].innerHTML) ){
+							max = parseFloat(all_i[j].innerHTML);
+						}
+					}
+				}
+				p_span.innerHTML = max;//给了页面结构
+			}	
+		}
+	</script>
+	</head>
+	<body>
+		<div>
+			<ul id="box">
+				<li>
+					<input type="button" value="-" />
+					<strong>0</strong>
+					<input type="button" value="+" />
+					单价:&nbsp;<i>10</i>&nbsp;元
+					小计:&nbsp;<span>0</span>&nbsp;元
+				</li>
+				<li>
+					<input type="button" value="-" />
+					<strong>0</strong>
+					<input type="button" value="+" />
+					单价:&nbsp;<i>30</i>&nbsp;元
+					小计:&nbsp;<span>0</span>&nbsp;元
+				</li>
+				<li>
+					<input type="button" value="-" />
+					<strong>0</strong>
+					<input type="button" value="+" />
+					单价:&nbsp;<i>50</i>&nbsp;元
+					小计:&nbsp;<span>0</span>&nbsp;元
+				</li>
+				<li>
+					<input type="button" value="-" />
+					<strong>0</strong>
+					<input type="button" value="+" />
+					单价:&nbsp;<i>300</i>&nbsp;元
+					小计:&nbsp;<span>0</span>&nbsp;元
+				</li>
+				<li>
+					<input type="button" value="-" />
+					<strong>0</strong>
+					<input type="button" value="+" />
+					单价:&nbsp;<i>300</i>&nbsp;元
+					小计:&nbsp;<span>0</span>&nbsp;元
+				</li>
+			</ul>
+			<p>商品合计共:&nbsp;<strong>0</strong>&nbsp;件,共花费了:&nbsp;<i>0</i>&nbsp;元,<br>其中最贵的商品单价是:&nbsp;<span>0</span>&nbsp;元</p>
+		</div>
+	</body>
+</html>

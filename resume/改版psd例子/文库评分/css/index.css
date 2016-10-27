@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-10-23 20:19:17
+ * @version $Id$
+ */
+
+/* reset */
+
+body{
+	background: linear-gradient(
+		to right,
+		#29223a,
+		#ecdddb
+		);
+}
+p{
+	margin: 0;
+}
+/* reset end */
+
+.box{
+	width: 500px;
+	height: 210px;
+	background: #fff;
+	margin: 30px auto;
+	border: 2px solid #e15671;
+	border-radius: 10px;
+}
+.logo{
+	width: 100%;
+	height: 73px;
+	font: 18px/73px "微软雅黑";
+	padding-left: 270px;
+	background: url(../img/miaov.png) no-repeat 106px 21px;
+}
+.start{
+	position: relative;
+	height: 50px;
+	padding-left: 100px;
+}
+.start span{
+	width: 40px;
+	height: 30px;
+	float: left;
+	background: url(../img/start.png) no-repeat;
+}
+
+.start .tip{
+	position: absolute;
+	left: 316px;
+	top: -10px;
+	font: 20px/50px "微软雅黑";
+	color: #e3657c;
+}
+
+
+.foot{
+	margin: 24px 105px;
+	text-align: center;
+	font: 14px/34px "微软雅黑";
+	color: #fff;
+	background: url(../img/foot.png) no-repeat 20px 8px,#e15671;
+	border-radius: 10px;
+}
+
+
+.start span.act{
+	background: url(../img/act.png) no-repeat;
+}
+
+
+
+
+

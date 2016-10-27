@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>评分</title>
+		<style type="text/css">
+			p{
+				margin: 0;
+				font: 20px/30px "微软雅黑";
+			}
+			span{
+				color: red;
+			}
+			#box{
+				position: relative;
+			}
+			#content{
+				position: absolute;
+				left: 120px;
+				top: 3px;
+			}
+			#content p{
+				float: left;
+			}
+			#text{
+				position: absolute;
+				left: 300px;
+				top: 3px;
+			}
+			#introduce{
+				font: 30px/40px '宋体';
+				color: blue;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var con = document.getElementById("content");
+				var imgs = con.querySelectorAll("img");
+				var text = document.getElementById("text");
+				var arr = ["差","较差","还行","推荐","力荐"];
+				
+				for( var j = 0; j < imgs.length; j++ ){
+					imgs[j].index = j;
+					imgs[j].onmouseover = function(){
+						for( var p = this.index; p <imgs.length ; p++){
+							imgs[p].src = "img/1-1.png";
+						}
+						if(this.index < 2){
+							for(var i = 0; i <= this.index; i++){
+								imgs[i].src = "img/1-2.png";
+								text.innerHTML = arr[i];
+							}
+						}else{
+							for(var i = 0; i <= this.index; i++){
+								imgs[i].src = "img/2-2.png";
+								text.innerHTML = arr[i];
+							}
+						}
+					}
+				}
+				
+				
+				
+				for( var k = 0; k < imgs.length; k++ ){
+					imgs[k].index = k;
+					imgs[k].onmouseout = function(){
+						for( var q = this.index; q >= 0; q--){
+							imgs[q].src = "img/1-1.png";
+							text.innerHTML = "<p>还没有评分哦!</p>";
+						}
+						if( xiabiao <=1){
+							for(var i = 0; i <= xiabiao; i++){
+								imgs[i].src = "img/1-2.png";
+								text.innerHTML = arr[i];
+							}
+						}else{
+							for( var i = 0;i<=xiabiao;i++){
+								imgs[i].src = "img/2-2.png";
+								text.innerHTML = arr[i];
+							}
+						}
+					}
+				}
+				
+				
+				
+				var xiabiao;
+				for( var j = 0; j < imgs.length; j++ ){
+					imgs[j].index = j;
+					imgs[j].onclick = function(){
+						xiabiao = this.index;
+					}
+				}
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<p id="introduce">百度文库评分</p>
+		<div id="box">
+			<p><span>*</span>总体评价：</p>
+			<div id="content">
+				<p>
+					<img src="img/1-1.png"/>
+				</p>
+				<p>
+					<img src="img/1-1.png"/>
+				</p>
+				<p>
+					<img src="img/1-1.png"/>
+				</p>
+				<p>
+					<img src="img/1-1.png"/>
+				</p>
+				<p>
+					<img src="img/1-1.png"/>
+				</p>
+			</div>
+			<p id="text">还没有评分哦!</p>
+		</div>
+	</body>
+</html>

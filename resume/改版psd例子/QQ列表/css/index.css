@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-10-20 14:21:05
+ * @version $Id$
+ */
+/*-------------reset-------------*/
+body{
+	margin:0;
+	background: #75a0d0;
+}
+p{
+	margin: 0;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+/*-------------reset end-------------*/
+
+
+
+
+#box{
+	width: 275px;
+	height: 570px;
+	background: url(../img/bg.png) no-repeat;
+	background-size:310px 630px;
+	margin: 3px auto;
+	border-radius: 20px;
+	-webkit-box-shadow:3px 3px 3px;
+	padding-top: 60px;
+	padding-left: 35px;
+}
+/* 整体 */
+.content{
+	width: 235px;
+}
+
+
+/* 每一块 */
+.sec{
+	width: 100%;
+	margin: 5px 0;
+}
+.title{
+	width: 200px;
+	line-height: 46px;
+	background:url(../img/icon1.png) no-repeat 16px 18px,#fff;
+	color: #e15671;
+	padding-left: 35px;
+}
+.list{
+	background: #dd5570;
+	color: #fff;
+}
+.list li{
+	padding-left: 35px;
+	font:14px/36px "宋体";
+	
+}
+
+
+.list li:hover{
+	background: #148c90;	
+}
+
+
+
+
+/* js */
+.active{
+	background:url(../img/icon2.png) no-repeat 14px 20px,rgba(237,20,67,.5)!important;
+	color: #fff;
+}
+
+
+
+/* js end */

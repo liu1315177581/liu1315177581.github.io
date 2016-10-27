@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片循环播放+缩略图</title>
+		<style>
+			img{
+				width: 500px;
+				border: none;
+				vertical-align: top;
+				display: none;
+			}
+			input{
+				border: none;
+				padding: 0;
+				width: 20px;
+				height: 50px;
+				font-size: 30px;
+				background: #ccc;
+				opacity: .5;
+				cursor: pointer;
+			}
+			p{
+				margin: 0;
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 10px;
+				border: 1px solid #000;
+			}
+			
+			
+			
+			#box{
+				position: relative;
+				width: 500px;
+				height: 322px;
+				margin: 0 auto;
+			}
+			
+			#btn{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 500px;
+				height: 322px;
+			}
+			#pre{
+				position: absolute;
+				top: 130px;
+				left: 0;
+				
+			}
+			#next{
+				position: absolute;
+				top: 130px;
+				right: 0;
+			}
+			#box2{
+				width: 100px;
+				margin: 50px auto;
+				position: relative;
+			}
+			#box2 img{
+				width: 80px;
+				position: absolute;
+				top: -50px;
+				left: 0;
+			}
+			p.bg1{
+				background: deeppink;
+			}
+			p.bg2{
+				background: dodgerblue;
+			}
+		
+			
+		</style>
+		<script>
+			window.onload = function(){
+				var pre = document.getElementById("pre");
+				var next = document.getElementById("next");
+				var box = document.getElementById("box");
+				var imgs = box1.querySelectorAll("img");
+				var box2 = document.getElementById("box2");
+				var imgs2 = box2.querySelectorAll("img");
+				var ps = box.querySelectorAll("p");
+
+				
+			
+				
+				var n=0;//if的条件
+				
+				var m=0;//记录上一次点击的值
+				//点击下一次的时候
+				next.onclick = function(){
+					if(n>3){
+						n = 0;
+					}else{
+						n++;
+					}
+					//清空上一次的点击
+					ps[m].className = "";
+					imgs[m].style.display = "none";
+					//给当前的循环加样式
+					imgs[n].style.display = "block";
+					ps[n].className = "bg1"
+					//将n的最终值赋给m，
+					m = n;
+					
+				}
+				
+				//点击上一次的时候
+				pre.onclick = function(){
+					if(n<1){
+						n = imgs.length-1;
+					}else{
+						n--;
+					}
+					console.log(n)
+					//清空上一次的点击
+					ps[m].className = "";
+					imgs[m].style.display = "none";
+					//给当前的循环加样式
+					imgs[n].style.display = "block";
+					ps[n].className = "bg1";
+					//将n的最终值赋给m
+					m = n;
+				}
+				
+				
+				
+				
+				for( var j = 0 ;j < ps.length; j++){
+					ps[j].index = j;
+					ps[j].onclick = function(){
+						//清上次点击的
+						ps[n].className = "";
+						imgs[n].style.display = "none";
+						//给当前加背景，显示样式
+						this.className = "bg1";
+						imgs[this.index].style.display = "block";
+						
+						//把当前值赋给m
+						m = this.index;
+						//将点击小圆点记录的下标值赋给n，如果不赋给n的话，在点击小圆点后，点击下一次或者上一次的时候需要点两次才可以切换到下一张
+						n = m;
+					}
+				}
+				
+				
+				for( var k = 0 ;k < ps.length; k++){
+					//自定义属性，记录下标值
+					ps[k].index = k;
+					//鼠标移入
+					ps[k].onmouseover = function(){
+						//进行判断
+						if(this.className == "bg1"){
+							this.className = "bg1";
+						}else{
+							this.className = "bg2";
+						}
+						imgs2[this.index].style.display = "block";
+					}
+					//鼠标移出
+					ps[k].onmouseout = function(){
+						//进行判断
+						if(this.className == "bg1"){
+							this.className = "bg1";
+						}else if(this.className == "bg2"){
+							this.className = "";
+						}
+						imgs2[this.index].style.display = "none";
+					}
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1">
+				<img src="img/content_img1.png" style="display:block;"/>
+				<img src="img/content_img2.png" />
+				<img src="img/content_img3.png" />
+				<img src="img/content_img4.png" />
+				<img src="img/content_img5.png" />
+			</div>
+			<div id="btn">
+				<input type="button" id="pre" value="<" />
+				<input type="button" id="next" value=">" />
+			</div>
+			<div id="box2">
+				<p class="bg1">
+					<img src="img/content_img1.png" />
+				</p>
+				<p>
+					<img src="img/content_img2.png"/>
+				</p>
+				<p>
+					<img src="img/content_img3.png"/>
+				</p>
+				<p>
+					<img src="img/content_img4.png"/>
+				</p>
+				<p>
+					<img src="img/content_img5.png"/>
+				</p>
+			</div>
+		</div>
+		
+	</body>
+</html>

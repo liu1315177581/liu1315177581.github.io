@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>找值</title>
+		<style>
+			div{
+				width: 1000px;
+				
+			}
+		</style>
+	</head>
+<script type="text/javascript">
+window.onload = function(){
+		/*需求
+		 * 1、找到arr里所有的数字：-98765, 34, -2, 0, 5
+		 * 2、找到可以转成数字的：'100px', -98765, 34, -2, 0, '300', '23.45元',  5 
+		 * 3、把转成数字以后，最大值判断出来：300
+		 * 4、把 NaN 所在的位置找出来：1 14 17  19
+		 * */
+		var arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];
+		
+//	1、找到arr里所有的数字：-98765, 34, -2, 0, 5
+	var arrNum = [];
+	for( var i=0; i<arr.length; i++ ){
+		//判断数组中值的数据类型是不是number 并且 NaN除外
+		if(typeof arr[i] == "number" && isNaN(arr[i]) == false){
+			arrNum.push(arr[i]);
+		}
+	}
+	number.innerHTML = arrNum;
+//	2、找到可以转成数字的：'100px', -98765, 34, -2, 0, '300', '23.45元',  5 
+	var arrNum2 = [];
+	for( var i=0; i<arr.length; i++ ){
+		if(typeof arr[i] == "string" || typeof arr[i] == "number" && isNaN(arr[i]) == false){
+			arrNum2.push(arr[i]);
+		}	
+	}
+	number2.innerHTML = arrNum2;
+//	3、把转成数字以后，最大值判断出来：300
+	var num = -Infinity;
+	for( var i=0; i<arr.length; i++ ){
+		if(num < Number(arr[i])){
+			num = Number(arr[i]);
+		}
+	}
+	max.innerHTML = num;
+//	4、把 NaN 所在的位置找出来：1 14 17  19	
+
+	//var n = 0;
+//	for( var i=0; i<arr.length; i++ ){
+//		if( isNaN(arr[i]) == true && typeof arr[i] !== "string" && typeof arr[i] !== "undefined" && typeof arr[i] !== "function" && typeof arr[i] !== "object"){
+//			console.log(i);
+//		}
+//	}
+	var localNum = [];
+	for( var i=0; i<arr.length; i++ ){
+		if(isNaN(arr[i]) && arr[i] != arr[i] ){
+			localNum.push(i);
+		}
+	}
+	local.innerHTML = localNum;
+}
+</script>
+	<body>
+		<div>原数组：arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];</div>
+		<p>1、数组中所有的数字：<span id="number"></span></p>
+		<p>2、数组中所有可以转成数字的：<span id="number2"></span></p>
+		<p>3、数组中最大的值：<span id="max"></span></p>
+		<p>4、NaN 所在的位置：<span id="local"></span></p>
+	</body>
+</html>

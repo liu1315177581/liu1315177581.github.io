@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>切换两组图片</title>
+	<style>
+		body{
+			font: bold 30px/40px "宋体";
+			color: blue;
+			position: relative;
+		}
+		input{
+			width: 100px;
+			height: 30px;
+			border: none;
+			font: 20px/30px "宋体";
+			color: #fff;
+			background: red;
+			border-radius: 10px;
+		}
+		input:hover{
+			background: blanchedalmond;
+			cursor: pointer;
+			color: #000000;
+		}
+		img{
+			vertical-align: top;
+			border: 3px solid #fff;
+			border-radius: 20px;
+		}
+		p{
+			text-align: center;
+		}
+		#introduce{
+			position: absolute;
+			top: 50px;
+			left: 0;
+			width: 200px;
+			border: 2px solid skyblue;
+			border-radius: 20px;
+			font: bold 18px/40px "宋体";
+			color: red;
+		}
+		#box{
+			width: 220px;
+			margin: 0 auto;
+			margin-top: 30px;
+		}
+		#imgBox{
+			width: 900px;
+			margin: 0 auto;
+			border: 5px solid skyblue;
+			border-radius: 20px;
+			background: pink;
+		}
+		.clear:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		#left,
+		#right{
+			float: left;
+			margin: 10px 20px;
+		}
+		#right{
+			
+		}
+		#imgs2{
+			width: 330px;
+			height: 200px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+	</style>
+		
+	</head>
+	<body>
+		<div id="introduce"><p>作品简介:</p>点击上一张和下一张,同时切换页面中的图片。单独点击图片,只切换点击的那一组图片,不影响另一组图片。</div>
+		<div id="imgBox" class="clear">
+			<div id="box">
+				<input type="button" id="btn1" value="前一张" />
+				<input type="button" id="btn2" value="后一张" />
+			</div>
+			<div id="left">
+				<p id="num">1/3</p>
+				<img src="img2/huba.jpg" id="imgs1" />
+				<p id="title">第一张</p>
+			</div>
+			<div id="right">
+				<p id="num2">1/3</p>
+				<img src="img/骆驼.jpg" id="imgs2" />
+				<p id="title2">第一张</p>
+			</div>
+		</div>
+	</body>
+<script>
+	var imgs1 = document.getElementById("imgs1");
+	var imgs2 = document.getElementById("imgs2");
+	var num = document.getElementById("num");
+	var title = document.getElementById("title");
+	var num2 = document.getElementById("num2");
+	var title2 = document.getElementById("title2");
+	var btn1 = document.getElementById("btn1");
+	var btn2 = document.getElementById("btn2");
+	
+	var arr = ["img2/huba.jpg","img2/dog.jpg","img2/taidi.jpg","img2/miao.jpeg","img2/cat.jpg"];
+	var arr2 = ["img/，，，.jpg","img/。。.jpg","img/enheng.jpg","img/flay.jpg"];
+	var arrTitle = ["第一张","第二张","第三张","第四张","第五张"];
+	var arr2Title = ["第一张","第二张","第三张","第四张"];
+	//声明两边的变量
+	var n = 0;
+	var m = 0;
+	//定义left和right的有名函数
+	function left(){
+		imgs1.src = arr[n];
+		num.innerHTML = n+1+'/'+arr.length;
+		title.innerHTML = arrTitle[n];
+	}
+	function right(){
+		imgs2.src = arr2[m];
+		num2.innerHTML = m+1+'/'+arr2.length;
+		title2.innerHTML = arr2Title[m];
+	}
+	
+	left();
+	right();
+	
+	
+	imgs1.onclick = function(){
+		n++;
+		if(n==arr.length){
+			n=0;
+		}
+		left();
+	}
+	
+	
+	imgs2.onclick = function(){
+		m++;
+		if(m==arr2.length){
+			m=0;
+		}
+		right();
+	}
+	
+	//点击前一张
+	btn1.onclick = function(){
+		//left切换图片
+		n--;
+		if(n<0){
+			n=arr.length-1;
+		}
+		left();
+		
+		//right切换图片
+		m--;
+		if(m<0){
+			m=arr2.length-1;
+		}
+		right();
+	}
+	
+	//点击后一张
+	btn2.onclick = function(){
+		n++;
+		if(n==arr.length){
+			n=0;
+		}
+		left();
+		
+		m++;
+		if(m==arr2.length){
+			m=0;
+		}
+		right();
+	}
+	
+	
+</script>
+</html>

@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-10-23 20:19:17
+ * @version $Id$
+ */
+
+/* reset */
+*{
+	margin: 0;
+}
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+input{
+	border:0;
+	padding: 0;
+	background: none;
+}
+.clear:after{
+	display: block;
+	content: "";
+	clear: both
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+/* reset end */
+
+
+
+
+.box{
+	width: 480px;
+	height: 300px;
+	margin: 30px auto;
+	padding: 57px 142px;
+	background:radial-gradient(
+		40% 90% at 50% 8% ,
+		#cb6083,
+		#272939	
+	);
+
+}
+
+.list{
+	width: 480px;
+	padding: 20px 0;
+	background:rgba(56,30,41,0.3);
+	color: #fff;
+	font:14px/36px "微软雅黑";
+	border-radius: 10px 10px 0 0;
+}
+.list li{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.list li i,
+.select li i{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-right: 16px;
+	background: url(../img/li-bg.png) no-repeat;
+}
+.list li.odd{
+	background: rgba(56,26,36,0.3);
+}
+
+.list li:hover{
+	background: #c54b74;
+}
+
+.list li i.sel,
+.select li i.sel{
+	background: url(../img/sel.png) no-repeat;
+}
+
+.select{
+	width: 480px;
+	background:#000000;
+	color: #fff;
+	font:14px/36px "微软雅黑";
+	padding: 12px 0;
+	border-radius: 0 0 10px 10px;
+}
+.select li{
+	width: 120px;
+	padding-left: 30px;
+}
+
+.select .like,
+.select .add,
+.select .delete{
+	width: 40px;
+	padding-left: 64px;
+	background: url(../img/like.png) no-repeat 30px 9px;
+}
+
+.select .add{
+	background: url(../img/add.png) no-repeat 30px 6px;
+}
+.select .delete{
+	background: url(../img/delete.png) no-repeat 30px 6px;
+}
+
+

@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-10-24 10:19:24
+ * @version $Id$
+ */
+
+/* reset */
+
+ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+	/*background: rgba(27,16,23,0.4);*/
+}
+img{
+	width: 26px;
+}
+.clear:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+
+
+/* reset */
+
+
+
+
+
+body{
+	background: linear-gradient(
+		to right,
+		#9293b6,
+		#c1b1cd
+		);
+}
+
+.box{
+	position: relative;
+	margin: 30px auto;
+	width: 270px;
+	height: 515px;
+	background: url(../img/listBg.png) no-repeat,
+				url(../img/bg.png) no-repeat; 
+	background-size: 270px 515px ;
+	border-radius: 16px;
+}
+.list{
+	position: absolute;
+	left: 21px;
+	top: 40px;
+	width: 230px;
+	height:370px;
+	max-height:370px; 
+	font: 14px/24px "微软雅黑";
+	color: #fff;
+	overflow: auto;
+}
+
+.list li{
+	margin: 10px 0;
+	max-width: 228px;
+    word-break: break-all;
+}
+.list li img{
+	margin: 0 5px;
+}
+.list li span{
+	display: inline-block;
+	padding: 0 10px;
+	width: 150px;
+	max-width: 150px;
+	background: #c55170;
+	font: 14px/26px "微软雅黑";
+}
+
+.list .odd{
+	float: right;
+}
+
+
+.list span.l{
+	border-radius: 10px;
+	background: rgba(26,16,23,0.8);
+}
+.list span.r{
+	border-radius: 10px;
+	background: rgba(197,81,112,0.8);
+}
+.printBox{
+	position: absolute;
+	bottom: 58px;
+	left: 16px;
+	width: 233px;
+	height: 26px;
+	background: #0a1a3b; 
+	padding: 10px 0;
+	padding-left: 5px;
+}
+.printBox input{
+	width: 160px;
+	margin-left: 10px;
+	border:none;
+	padding: 0;
+	line-height: 26px;
+	
+}
+.printBox button{
+	border:none;
+	padding: 0;
+	width: 36px;
+	line-height: 26px;
+	background: none;
+	color: #cf506b;
+	font: 14px/26px "微软雅黑";
+}

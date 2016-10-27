@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/zuoye-style.css" />
+<script type="text/javascript">
+	
+
+window.onload = function(){
+		
+	var btn = document.getElementById("btn");
+	var text = document.getElementById("text");
+	var list = document.getElementById("list");
+	var imgs = document.getElementById("imgs");
+	
+	var onOff = true;
+		imgs.onclick = function(){
+			if(onOff){
+				imgs.src = "img/YB.png";
+				onOff = false;
+			}else{
+				imgs.src = "img/XB.png";
+				onOff = true;
+			}
+		}
+		
+		btn.onclick = function(){
+			if(text.value == ""){
+				alert("警告你啊：空的不能发！！！")
+			}else if(onOff){
+				var textInput = text.value;
+				list.innerHTML =list.innerHTML +'<img src="img/XB.png" style="float:right;" />'+ '<li style="float:right;background:yellow;">'+textInput+'</li>' +'<br>'
+				//发送完之后清空输入框
+				text.value = "";			}else{
+					var textInput = text.value;
+					list.innerHTML =list.innerHTML +'<img src="img/YB.png" style="float:left;" />' + '<li style="float:left;background:green;">'+textInput+'</li>' + '<br>'
+					//发送完之后清空输入框
+					text.value = "";
+				}
+		}
+	}
+</script>
+</head>
+<body>
+	<p id="introduce">在输入框输入内容，点击发送，输入的内容呈现在页面中。点击图片切换不同用户。</p>
+	<div id="box">
+		<ul id="list" class="clear"></ul>
+		<div id="sendBox" class="clear">
+			<img src="img/XB.png" id="imgs" class="fl" />
+			<input type="text" id="text" class="fl"/>
+			<input type="button" id="btn" value="发送" class="fl" />
+		</div>
+	</div>
+</body>
+</html>

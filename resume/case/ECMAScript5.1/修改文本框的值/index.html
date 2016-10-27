@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>修改内容</title>
+		<style>
+			p{
+				margin: 0;
+				display: none;
+			}
+			input{
+				width: 100px;
+				display: none;
+			}
+			img,span{
+				display: inline-block;
+			}
+			p span{
+				width: 40px;
+				line-height: 24px;
+				/*border:1px solid #000;*/
+				text-align: center;
+				/*background: skyblue;*/
+			}
+			p span:hover{
+				background: skyblue;
+			}
+			#box2,#box3{
+				border-top: 1px solid greenyellow;
+			}
+			.font{
+				line-height: 40px;
+			}
+			.title{
+				line-height: 40px;
+				border-top: 1px solid #000;
+				background: greenyellow;
+			}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				function $(id){
+					return document.getElementById(id);	
+				}
+				function all(obj){//()中是形参
+					
+					var box = $("box");
+					var box2 = $("box2");
+					var box2 = $("box3");
+				
+				
+					var change = obj.getElementsByTagName("img")[0];//修改按钮	
+					var text = obj.getElementsByTagName("input")[0];//输入框
+					var cont = obj.getElementsByTagName("span")[0];//页面内容
+					var ps = obj.getElementsByTagName("p")[0];//修改按钮的父级
+					var btn = ps.getElementsByTagName("span");//修改按钮
+					
+					//点击修改时.隐藏显示内容,显示输入框,显示保存和取消
+					change.onclick = function(){
+						cont.style.display = "none";  //隐藏页面显示内容
+						text.style.display = "inline-block";//显示输入框
+						ps.style.display = "inline-block";//显示按钮
+						text.value = cont.innerHTML; //输入框显示页面内容
+					}
+					//点击保存按钮,更改span中的内容
+					btn[0].onclick =function(){
+						if(text.value == ""){
+							alert("请输入内容");
+						}else{
+							text.style.display = "none";//隐藏输入框
+							cont.innerHTML = text.value;//更改页面显示
+							cont.style.display = "inline-block";//显示页面内容
+							ps.style.display = "none";//隐藏按钮
+							text.value = cont.innerHTML; //输入框显示页面内容
+						}
+					}
+					//取消按钮
+					btn[1].onclick =function(){
+						text.style.display = "none";//隐藏输入框
+						cont.style.display = "inline-block";//显示页面内容
+						ps.style.display = "none";//隐藏按钮
+						text.value = cont.innerHTML; //输入框显示页面内容
+					}
+				}
+				//调用函数.
+				all(box);//实参
+				all(box2);
+				all(box3);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="title">分类名称</div>
+		<div id="box" class="font">
+			<span >javascript</span>
+			<input type="text" />
+			<img src="img/change.png"/>
+			<p>
+				<span>保存</span>
+				<span>取消</span>
+			</p>
+		</div>
+		<div id="box2" class="font">
+			<span>javascript</span>
+			<input type="text" />
+			<img src="img/change.png"/>
+			<p>
+				<span>保存</span>
+				<span>取消</span>
+			</p>
+		</div>
+		<div id="box3" class="font">
+			<span>javascript</span>
+			<input type="text" />
+			<img src="img/change.png"/>
+			<p>
+				<span>保存</span>
+				<span>取消</span>
+			</p>
+		</div>
+	</body>
+</html>

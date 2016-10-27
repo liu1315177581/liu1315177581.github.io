@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-10-24 15:37:58
+ * @version $Id$
+ */
+
+ /* reset */
+body,p{
+	margin: 0;
+}
+img{
+	width: 476px;
+}
+
+/* reset end */
+.box{
+	position: relative;
+	width: 800px;
+	height: 538px;
+	margin: 30px auto;
+	background: url("../img/bg.png") no-repeat;
+	background-size: 800px 640px;
+}
+
+.cont{
+	position: absolute;
+	left: 200px;
+	top: 100px;
+	width: 476px;
+	height: 317px;
+}
+.prev,.next{
+	position: absolute;
+	display: block;
+	width: 26px;
+	height: 46px;
+	cursor: pointer;
+}
+.prev{
+	left: 206px;
+	top: 228px;
+	background: url("../img/prev.png") no-repeat;
+}
+.next{
+	right: 130px;
+	top: 228px;
+	display: inline-block;
+
+	background: url("../img/next.png") no-repeat;
+}
+
+.point{
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	left: 376px;
+	bottom: 46px;
+}
+.point span{
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin: 5px;
+	background: #c9c9c9;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.point span.act{
+	background: #6cd2eb;
+}
+
+.dis{
+	width: 94px;
+	height: 68px;
+	position: absolute;
+	display: none;
+	background: url(../img/minBg.png) no-repeat;
+	background-size: 94px 68px;
+}
