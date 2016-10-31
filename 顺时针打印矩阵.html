@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body>
+    
+</body>
+<script>
+/*	var arr = [
+		[1,2,3,4],
+		[5,6,7,8],
+		[9,10,11,12],
+		[13,14,15,16]
+	]
+*/
+var arr = [];
+var n = 1;
+for(var i = 0; i < 4; i++){
+	arr[i] = [];
+	for(var j = 0; j < 4; j++){
+		arr[i][j] = n++;
+	}
+}
+
+console.log(arr[0])
+
+
+
+
+
+
+
+var lineLen = arr[0].length;
+var rowLen = arr.length;
+
+var start = 0;
+var stopX = lineLen -1 - start,
+	stopY = rowLen -1- start;
+
+
+/*上行*/
+function fn(arr,start,stopX,stopY){
+	for(var i = start; i <= stopX; i++ ){
+		console.log(arr[start][i]);
+	}
+	/*右行*/
+	if(start < stopX ){
+		for( var i = start+1; i <= stopY; i++){
+			console.log(arr[i][stopX]);
+		}
+	}
+
+	/*下行*/
+	if(start < stopX && start < stopY){
+		for( var i = stopX-1; i >= start; i--){
+			console.log(arr[stopX][i]);
+		}
+	}
+
+	/*左行*/
+	if(start < stopX && start < stopY-1){
+		for( var i = stopY-1; i >= start+1; i--){
+			console.log(arr[i][start]);
+			// console.log(i,start)
+		}
+	}
+
+	start++;
+	stopX = lineLen -1 - start;
+	stopY = rowLen -1- start;
+	if(stopX !== -1 && stopY !== -1){
+		fn(arr,start,stopX,stopY);
+	}
+	
+
+}
+
+// start++;
+fn(arr,start,stopX,stopY);
+
+
+</script>
+</html>
