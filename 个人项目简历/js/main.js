@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 		
 		transitionsNotSupported = ( $('.no-csstransitions').length > 0);
 
-	var animating = false,
+	var animating = false;
 		
 		numRandoms = projects.find('li').length, 
 		uniqueRandoms = [];
@@ -34,7 +34,7 @@ jQuery(document).ready(function($){
 				navigationTrigger.add(projectsContainer).removeClass('project-open');
 				closeProject();
 			} else if( navigationTrigger.hasClass('nav-visible') ) {
-				
+				// projectsContainer.css("display","none")
 				navigationTrigger.removeClass('nav-visible');
 				navigation.removeClass('nav-clickable nav-visible');
 				if(transitionsNotSupported) projectPreviews.removeClass('slide-out');
@@ -141,7 +141,9 @@ jQuery(document).ready(function($){
             uniqueRandoms.push(i);
         }
 	}
+
 });
+
 
 
  (function($){

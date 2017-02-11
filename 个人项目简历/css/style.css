@@ -92,7 +92,7 @@ Menu trigger
   transition: transform 0.3s, background-color 0.3s;
 }
 .cd-nav-trigger .cd-icon::before, .cd-nav-trigger .cd-icon::after {
-  /* upper and lower lines of the menu icon */
+  
   content: '';
   top: 0;
   right: 0;
@@ -158,7 +158,7 @@ Menu trigger
   -ms-transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
   -o-transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
   transform: translateX(5px) translateY(-3px) rotate(45deg) scaleX(0.5);
-}
+}*/
 @media only screen and (min-width: 1024px) {
   .cd-nav-trigger.nav-visible .cd-icon {
     -webkit-transform: translateY(-50%) translateX(-50%) rotate(-90deg);
@@ -444,15 +444,15 @@ Projects
   transition: transform 0.3s 0.3s;
 }
 .cd-project-title h2 {
-  font-size: 2.5rem;
-  line-height: 1.5;
+  font-size: 4rem;
+  line-height: 1;
   font-weight: 700;
 }
 .cd-project-title p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: "Merriweather", serif;
   font-style: italic;
-  line-height: 1.2;
+  line-height: 1;
   padding: .4em 2em;
   opacity: .8;
 }
@@ -727,7 +727,7 @@ li.selected .cd-project-title,
   color: #a8ae7e;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   letter-spacing: 1px;
 }
 .cd-primary-nav .cd-label::after {
