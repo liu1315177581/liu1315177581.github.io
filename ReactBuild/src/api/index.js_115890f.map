@@ -1,0 +1,1 @@
+{"version":3,"sources":["/src/api/index.es6"],"names":[],"mappings":";;;;;;;;;;;;;;qBAIkB,UAAU;;;;mBACZ,QAAQ;;;;qBACT;AACX,OAAK;AACL,KAAG;CACN","file":"/src/api/index.es6","sourcesContent":["/**\r\n * @module api\r\n * @author 小虎牙\r\n */\r\nimport fetch from './_fetch';\r\nimport API from './_API';\r\nexport default {\r\n    fetch,\r\n    API\r\n};"]}

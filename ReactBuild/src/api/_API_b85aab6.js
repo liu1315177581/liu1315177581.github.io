@@ -1,0 +1,1 @@
+define("8a61f96bcf9319514020",function(e,t,f){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]={T1:"/api/t1",T2:"/api/t2"},f.exports=t["default"]});

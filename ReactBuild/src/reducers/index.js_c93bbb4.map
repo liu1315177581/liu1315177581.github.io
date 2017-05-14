@@ -1,0 +1,1 @@
+{"version":3,"sources":["/src/reducers/index.es6"],"names":[],"mappings":";;;;;;;;;;;;;;;;uBAMoB,WAAW;;;;qBACjB;AACb,SAAO;CACP","file":"/src/reducers/index.es6","sourcesContent":["/**\r\n * @module reducers\r\n * @author 小虎牙\r\n */\r\n\r\n// 加减器\r\nimport counter from './counter'\r\nexport default{\r\n\tcounter\r\n}"]}

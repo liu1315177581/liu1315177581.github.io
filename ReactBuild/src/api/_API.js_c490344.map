@@ -1,0 +1,1 @@
+{"version":3,"sources":["/src/api/_API.es6"],"names":[],"mappings":";;;;;;;;;;;qBAIe;;;AAGX,MAAI,EAAE,SAAS;AACf,MAAI,EAAE,SAAS;;CAElB","file":"/src/api/_API.es6","sourcesContent":["/**\r\n * @module _API\r\n * @author 小虎牙\r\n */\r\nexport default {\r\n\r\n    // 测试接口\r\n    'T1': '/api/t1',\r\n    'T2': '/api/t2',\r\n        \r\n};"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["/src/routes/index.es6"],"names":[],"mappings":";;;;;;;;;;;;;;sBAImB,WAAW;;;;qBACf;AACX,QAAM;CACT","file":"/src/routes/index.es6","sourcesContent":["/**\r\n * @module routes\r\n * @author 小虎牙\r\n */\r\nimport Routes from './_routes'\r\nexport default {\r\n    Routes\r\n};"]}
