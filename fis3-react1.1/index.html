@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>fis3 react</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/static/icon/icon.png">
+    <link rel="stylesheet" href="/static/istyle/app.css?__inline">
+</head>
+<body>
+    <!-- This HTML Element { app } is a template entry. -->
+    <div id="app"></div>
+
+    <!-- import commontJS. -->
+    <script src="/static/lib/mod.js"></script>
+    <!-- import main module. -->
+    <script>
+        'use strict';
+        (function () {
+            require.async(['main']);
+        }());
+    </script>
+</body>
+</html>
